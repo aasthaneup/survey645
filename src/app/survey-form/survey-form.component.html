@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+	<!--This is a Survey page that allows prospective students to provide
+		feedback about their campus visit.-->
+
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+	</head>
+	<body>
+		<!-- container for the entire page content -->
+		<div class="containerBox w3-container surveyCont">
+		<div class="headPart">
+			<h1>Thank you for your interest!</h1>
+			<h6>
+			Thank you for taking time out to complete this survey. We value your
+			feedback.
+			</h6>
+		</div>
+		<div class="form">
+			<h5>Please tell us about yourself!</h5>
+			<form
+			#surveyForm="ngForm"
+			name="surveyForm"
+			id="surveyform"
+			action="#"
+			(ngSubmit)="surveyForm.form.valid && submitSurvey(surveyForm.value)"
+			id="form"
+			autocomplete="on"
+			class="midForm"
+			>
+			<div id="error"></div>
+			<div class="topForm">
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+					<label
+						>First Name
+						<input
+						ngModel
+						#firstName="ngModel"
+						name="firstName"
+						id="firstName"
+						placeholder="Enter first name"
+						autocomplete="on"
+						autofocus="on"
+						type="text"
+						class="w3-input w3-border w3-margin-right"
+						required
+						/>
+					</label>
+					<small *ngIf="firstName.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+						First Name is required!
+					</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					Last Name
+					<input
+					ngModel
+					#lastName="ngModel"
+					name="lastName"
+					id="lastName"
+					placeholder="Enter last name"
+					autocomplete="on"
+					type="text"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="lastName.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Last Name is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label
+					>Street Address
+					<input
+					ngModel
+					#streetAddress="ngModel"
+					id="streetAddress"
+					name="streetAddress"
+					placeholder="Enter Street Address"
+					autocomplete="on"
+					type="text"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="streetAddress.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Street Address is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					City
+					<input
+					ngModel
+					#city="ngModel"
+					name="city"
+					id="city"
+					placeholder="Enter city"
+					autocomplete="on"
+					type="text"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="city.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					City is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					State
+					<input
+					ngModel
+					#state="ngModel"
+					name="state"
+					id="state"
+					placeholder="Enter state"
+					autocomplete="on"
+					autofocus="on"
+					type="text"
+					size="25"
+					maxlength="30"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="state.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					State is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					Zip Code
+					<input
+					ngModel
+					#zip="ngModel"
+					id="zip"
+					name="zip"
+					placeholder="Enter zipcode"
+					autocomplete="on"
+					type="text"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="zip.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Zip Code is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					Phone Number
+					<input
+					ngModel
+					#phone="ngModel"
+					id="phone"
+					name="phone"
+					type="phone"
+					autocomplete="on"
+					placeholder="(###) ###-####"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="phone.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Phone Number is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom">
+				<label>
+					Email
+					<input
+					ngModel
+					#email="ngModel"
+					id="email"
+					name="email"
+					type="email"
+					placeholder="name@domain.com"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="email.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Email is required!
+				</small>
+				</div>
+				<div class="w3-half w3-margin-top w3-margin-bottom w3-margin-bottom">
+				<label>
+					Survey date
+					<input
+					ngModel
+					#dateOfSurvey="ngModel"
+					name="dateOfSurvey"
+					id="dateOfSurvey"
+					type="dateOfSurvey"
+					placeholder="mm/dd/yyyy"
+					required
+					class="w3-input w3-border w3-margin-right"
+					/>
+				</label>
+				<small *ngIf="dateOfSurvey.invalid && (surveyForm.submitted)" class="w3-text-red w3-bold">  
+					Survey Date is required!
+				</small>
+				</div>
+			</div>
+			<div *ngIf="(surveyForm.submitted)" class="addMargin"></div>
+				<h6 class="secondPart">
+					<strong> What did you like most about the campus?</strong>
+				</h6>
+				<div class="multiOptions" *ngFor="let like of likes">
+					<label
+					>
+					<input
+						class="w3-check w3-margin"
+						name="liked"
+						type="checkbox"
+						[(ngModel)]="like.selected"
+					/>{{ like.name }}
+					</label>
+				</div>
+				<h6>
+					<strong> How did you become interested in the university?</strong>
+				</h6>
+				<p>
+					<label> <input
+					ngModel
+					id="radio1"
+					name="interested"
+					type="radio"
+					value="Friends"
+					class="w3-margin-left"
+					/>
+					Friends</label>
+				</p>
+				<p>
+					<label> <input
+					ngModel
+					id="radio2"
+					name="interested"
+					type="radio"
+					value="Television"
+					class="w3-margin-left"
+					/>
+					Television</label>
+				</p>
+				<p>
+					<label> <input
+					ngModel
+					id="radio3"
+					name="interested"
+					type="radio"
+					value="Internet"
+					class="w3-margin-left"
+					/>
+					Internet</label>
+				</p>
+				<p>
+					<label> <input
+					ngModel
+					id="radio4"
+					name="interested"
+					type="radio"
+					value="Other"
+					class="w3-margin-left"
+					/>
+					Other</label>
+				</p>
+				<h6 class="w3-margin-top">
+					<label for="recommend"
+					><strong
+						>How likely are you to recommend the University to your friends?
+					</strong></label
+					>
+				</h6>
+				<select ngModel name="recommend" id="recommend" class="w3-select w3-margin-bottom">
+					<option selected="selected" value="verylikely">Very Likely</option>
+					<option value="likely">Likely</option>
+					<option value="unlikely">Unlikely</option>
+				</select>
+			<button type="submit" id="submit" type="submit" class="w3-button w3-btn w3-red w3-center w3-margin">Submit</button>
+			<button (click)="clearSurvey()" class="w3-button w3-btn w3-green w3-center w3-margin">Cancel</button>
+			</form>
+		</div>
+		<!-- footer with icons and a link to the top of the page -->
+		<footer class="footer w3-center w3-black">
+			<a href="#" class="toTop w3-button w3-light-grey"
+			>To HomePage</a
+			>
+		</footer>
+		</div>
+	</body>
+</html>

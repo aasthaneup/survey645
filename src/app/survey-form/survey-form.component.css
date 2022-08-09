@@ -1,0 +1,31 @@
+/*Externalstylesheet*/
+@media all {
+    html {
+        background: #123b22;
+        background-attachment: fixed;
+    }
+}
+
+li {
+    font-weight: bold;
+}
+
+h1 {
+    color: #006633;
+}
+body {
+    height: 100%;
+    line-height: 1;
+}
+
+.multiOptions {
+  display: inline-block;
+}
+
+.secondPart {
+  display: block;
+}
+
+.addMargin {
+  margin: 70px;
+}

@@ -1,0 +1,22 @@
+<html>
+  <h2>
+    <div class="w3-container allSurTitle" id="home">
+      ALL SURVEYS
+    </div>
+</h2>
+  <body>
+    <!-- Table to list all the names of the students who has completed the survey -->
+    <br>
+    <table id="surveys">
+        <tr>
+            <th>Student Name</th>
+        </tr>
+        <tr *ngFor="let student of nameStudents">
+          <td>
+            <a href="view-survey?id={{student.id}}">{{student.name}}</a>
+          </td>
+        </tr>
+    </table>
+    <br>
+  </body>
+</html>

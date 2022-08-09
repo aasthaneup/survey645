@@ -1,0 +1,13 @@
+.surveyHeader {
+    text-align: center;
+    background-color:  #FFCC33;
+    color: #006633;
+}
+table {
+    width: 80%;
+    margin: auto;
+}
+table td, table th {
+    text-align: left;
+    padding: 10px;
+}
